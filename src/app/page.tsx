@@ -1,113 +1,124 @@
 import Image from 'next/image'
+import me from '../../public/me.jpg'
+import { BsGithub, BsLinkedin, BsMailbox, BsRobot, BsFiletypeHtml, BsFiletypeCss, BsFiletypePy, BsFiletypeJava, BsFiletypeJs } from 'react-icons/bs'
+import {CgFigma} from 'react-icons/cg'
+import {CiLaptop} from 'react-icons/ci'
+import {FaHtml5, FaJs, FaCss3, FaPython, FaJava, FaFigma,} from 'react-icons/fa'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className=" bg-slate-50 text-slate-900 px-10">
+      <section id='SnehaMichelle'>
+      <nav>
+        <ul className=" p-4 py-4 flex justify-between">
+          <li><a href="#SnehaMichelle">Sneha Michelle</a></li>
+          <li><a href="#SnehaMichelle">Home</a> </li>
+          <li><a href="#services">Services</a> </li>
+          <li><a href="#skills">Skills</a> </li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <hr className=" fill-black"/>
+      </nav>
+      <div className=' py-20 flex justify-center'>
+        <div>
+        <div className='p-40'>
+          <h1 className=' text-5xl'>I am <span className=" font-bold">Sneha Michelle</span></h1>
+          <h2 className=' mt-2 text-2xl'>Front-end developer, designer, and student.</h2>
+          </div>
+          <div className=' flex justify-evenly'>
+            <a href="https://github.com/Namslay26"><BsGithub className=' text-3xl'/></a>
+            <a href="https://www.linkedin.com/in/sneha-michelle-vimal-1b73b0213/"><BsLinkedin className=' text-3xl'/></a>
+            <a href="vsnehamichelle@gmail.com"><BsMailbox className=' text-3xl'/></a>
+          </div>
+        </div>
+        <div className='p-30'>
+          <Image  className='w-400 h-400' src={me} alt="Sneha Michelle" width={400} height={400}/>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      </section>
+      <section className='px-20' id='services'>
+        <h1 className=' py-10 m-2 text-3xl font-bold'>What do I do?</h1>
+        <br />
+        <div className=' flex justify-between'>
+        <div className="shadow-lg  p-5 rounded-xl my-10">
+          <CgFigma className=' w-10 h-10  ' />
+          <h3 className=' text-lg font-medium pt-8 pb-2'>UI/UX Design</h3>
+          <p className=' py-2'>I create new and beautiful designs and websites according to your needs </p>
+        </div>
+        <div className="shadow-lg p-5 rounded-xl my-10">
+          <CiLaptop className=' w-10 h-10 ' />
+          <h3 className=' text-lg font-medium pt-8 pb-2'>Front End Applications</h3>
+          <p className=' py-2'>I create new and beautiful designs and websites according to your needs </p>
+        </div>
+        <div className="shadow-lg  p-5 rounded-xl my-10">
+          <BsRobot className=' w-10 h-10' />
+          <h3 className=' text-lg font-medium pt-8 pb-2'>Machine Learning and Data Science</h3>
+          <p className=' py-2'>I create new and beautiful designs and websites according to your needs </p>
+        </div>
+        </div>
+      </section>
+      <br />
+      <section className='px-20 mt-20' id='skills'>
+          <h1 className='py-10 text-3xl font-bold'>Skills</h1>
+          <div className='py-10 flex justify-between'>
+            <div className='flex'>
+              <FaHtml5 className='text-3xl'/><p className='text-3xl ml-3 font-semibold'>HTML</p>
+            </div>
+            <div className='flex'>
+              <FaCss3 className='text-3xl'/><p className='text-3xl ml-3 font-semibold'>CSS</p>
+            </div>
+            <div className='flex'>
+              <FaJs className='text-3xl'/><p className='text-3xl ml-3 font-semibold'>Javascript</p>
+            </div>
+            <div className='flex'>
+              <FaPython className='text-3xl'/><p className='text-3xl ml-3 font-semibold'>Python</p>
+            </div>
+          </div>
+          <hr />
+          <div className='py-10 flex justify-evenly'>
+            <div className='flex'>
+              <FaJava className='text-3xl'/><p className='text-3xl ml-3 font-semibold'>Java</p>
+            </div>
+            <div className='flex'>
+              <FaFigma className='text-3xl'/><p className='text-3xl ml-3 font-semibold'>Figma</p>
+            </div>
+          </div>
+      </section>
+      <section className='px-20 mt-20' id='projects'>
+      <h1 className='py-10 text-3xl font-bold'>Projects</h1>
+      <div>
+        <h2 className='py-5 text-2xl font-semibold'>Gesture Based Electronic Device Control - April 2023</h2>
+        <p>The gesture recognition control of electronic devices project aims to develop a system that allows users to interact with electronic devices using hand gestures. The project utilizes computer vision techniques, specifically hand tracking and gesture recognition algorithms, implemented with libraries such as OpenCV and MediaPipe. By tracking the position of the hand and analyzing hand gestures, the system can interpret user actions and perform corresponding actions, such as controlling the mouse, keyboard, screen brightness, or audio playback. The project modularizes different tasks, such as hand tracking, gesture recognition, and device control, to ensure efficient and accurate interaction between the user and the electronic devices.</p>
+        <h5 className=' py-3 font-medium'>Tech Stack Used:OpenCV, MediaPipe, Numpy, PyAutoGUI, Screen Brightness Control.</h5>
+        <h4 className=' py-4 font-mono'><a href="https://github.com/Namslay26/gesture-recognition-project">Link to the project</a></h4>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <hr />
+      <div>
+        <h2 className='py-5 text-2xl font-semibold'>BookIO - November 2022</h2>
+        <p>Book.IO is an innovative online platform designed to streamline the process of finding and reviewing academic textbooks. It caters to teachers, professors, students, and academic enthusiasts, allowing them to save time by accessing reviews and recommendations from a diverse community. With a user-friendly interface, Book.IO aims to connect users with appropriate textbooks for their academic references, enhancing the learning experience.</p>
+        <h5 className=' py-3 font-medium'>Tech Stack Used:HTML5, CSS3, JavaScript, Bootstrap, Firebase.</h5>
+        <h4 className=' py-4 font-mono'><a href="https://github.com/Namslay26/BookIO">Link to the project</a></h4>
       </div>
+      </section>
+      <section  className='  bg-slate-950  text-white px-20 mt-20 ' id='contact'>
+        <h1 className='py-10 text-3xl font-bold'>Contact me!</h1>
+        <div className='py-10 flex justify-evenly'>
+          <div>
+            <h2 className='py-5 text-2xl font-bold'>Just say hi!</h2>
+            <p className='py-4 text-lg font-medium'>I would love to collaborate and work on projects together !</p>
+          </div>
+          <div>
+            <h2 className='py-5 text-2xl font-bold'>Social Media Links</h2>
+            <ul>
+              <li><a href="https://github.com/Namslay26">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/sneha-michelle-vimal-1b73b0213/">LinkedIn</a></li>
+              <li><a href="vsnehamichelle@gmail.com">Email</a></li>
+              <li><a href="https://www.behance.net/snehamvimal">Behance</a></li>
+            </ul>
+          </div>
+        </div>
+      </section >
     </main>
   )
 }
