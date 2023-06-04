@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import me from '../../public/me.jpg'
-import { BsGithub, BsLinkedin, BsMailbox, BsRobot, BsFiletypeHtml, BsFiletypeCss, BsFiletypePy, BsFiletypeJava, BsFiletypeJs } from 'react-icons/bs'
+import { BsGithub, BsLinkedin, BsMailbox, BsRobot, } from 'react-icons/bs'
 import {CgFigma} from 'react-icons/cg'
 import {CiLaptop} from 'react-icons/ci'
 import {FaHtml5, FaJs, FaCss3, FaPython, FaJava, FaFigma,} from 'react-icons/fa'
@@ -48,8 +48,8 @@ export default function Home() {
         </div>
         <div className="shadow-lg p-5 rounded-xl my-10">
           <CiLaptop className=' w-10 h-10 ' />
-          <h3 className=' text-lg font-medium pt-8 pb-2'>Front End Applications</h3>
-          <p className=' py-2'> I'm a skilled front-end developer with expertise in HTML, CSS, JavaScript, React, and Next.js, ready to bring your web projects to life. </p>
+          <h3 className='text-lg font-medium pt-8 pb-2'>Front End Applications</h3>
+          <p className='py-2'> Im a skilled front-end developer with expertise in HTML, CSS, JavaScript, React, and Next.js, ready to bring your web projects to life. </p>
         </div>
         <div className="shadow-lg  p-5 rounded-xl my-10">
           <BsRobot className=' w-10 h-10' />
