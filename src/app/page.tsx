@@ -54,7 +54,7 @@ export default function Home() {
         <div className="shadow-lg  p-5 rounded-xl my-10">
           <BsRobot className=' w-10 h-10' />
           <h3 className=' text-lg font-medium pt-8 pb-2'>Machine Learning and Data Science</h3>
-          <p className=' py-2'>I'm a passionate machine learning enthusiast with a deep curiosity for the world of AI, eager to explore and innovate in the realm of machine learning. </p>
+          <p className=' py-2'>Im a passionate machine learning enthusiast with a deep curiosity for the world of AI, eager to explore and innovate in the realm of machine learning. </p>
         </div>
         </div>
       </section>
