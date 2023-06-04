@@ -7,7 +7,7 @@ import {FaHtml5, FaJs, FaCss3, FaPython, FaJava, FaFigma,} from 'react-icons/fa'
 
 export default function Home() {
   return (
-    <main className=" bg-slate-50 text-slate-900 px-10 overflow">
+    <main className=" bg-slate-50 text-slate-900 px-10 overflow-hidden">
       <section id='SnehaMichelle'>
       <nav>
         <ul className=" p-4 py-4 flex justify-between space-x-2">
