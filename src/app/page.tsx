@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import image from '../../public/image.jpg'
-import eventPhoto from '../../public/IMG_4766.JPG'
 
 import {
   BsGithub,
@@ -600,7 +599,7 @@ export default function Home() {
   <div className="relative overflow-hidden rounded-[2rem] bg-black">
     <div className="relative aspect-[16/8] w-full">
       <Image
-        src={eventPhoto}
+        src="/IMG_4766.JPG"
         alt="Sneha Michelle hosting an enterprise event"
         fill
         className="object-cover object-center transition duration-700 hover:scale-[1.02]"
