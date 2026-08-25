@@ -1,128 +1,708 @@
 import Image from 'next/image'
-import me from '../../public/me.jpg'
-import { BsGithub, BsLinkedin, BsMailbox, BsRobot, } from 'react-icons/bs'
-import {CgFigma} from 'react-icons/cg'
-import {CiLaptop} from 'react-icons/ci'
-import {FaHtml5, FaJs, FaCss3, FaPython, FaJava, FaFigma,} from 'react-icons/fa'
+import image from '../../public/image.jpg'
+import eventPhoto from '../../public/IMG_4766.JPG'
+
+import {
+  BsGithub,
+  BsLinkedin,
+  BsArrowUpRight,
+  BsEnvelope,
+  BsCodeSlash,
+  BsRobot,
+  BsLightningCharge,
+} from 'react-icons/bs'
+
+import { SiFigma } from 'react-icons/si'
 
 export default function Home() {
+  const skills = [
+    {
+      title: 'Software Engineering',
+      description:
+        'Building scalable applications, event-driven systems, APIs, and intuitive products.',
+      items: ['Java', 'Spring Boot', 'React', 'Apache Kafka', 'SQL', 'REST APIs'],
+    },
+    {
+      title: 'AI / ML',
+      description:
+        'Exploring NLP, LLMs, generative AI, computer vision, and intelligent applications.',
+      items: [
+        'Python',
+        'NLP',
+        'LLMs',
+        'Generative AI',
+        'Computer Vision',
+        'Scikit-learn',
+      ],
+    },
+    {
+      title: 'Cloud & DevOps',
+      description:
+        'Automating development workflows and learning to build reliable cloud-native systems.',
+      items: ['AWS', 'Jenkins', 'Docker', 'Kubernetes', 'Ansible', 'OpenShift'],
+    },
+    {
+      title: 'Creative Technology',
+      description:
+        'I enjoy the space where engineering, design, interaction, and product thinking meet.',
+      items: ['Figma', 'Next.js', 'UI/UX', 'Prototyping', 'Product Thinking'],
+    },
+  ]
+
+  const projects = [
+    {
+      number: '01',
+      type: 'PROFESSIONAL • PRIVACY • DISTRIBUTED SYSTEMS',
+      title: 'PII Sanitization Platform',
+      description:
+        'Led the development of an automated real-time PII sanitization platform, modernizing a legacy workflow into a scalable web application. The platform transformed a manual process taking several days into an automated workflow completed within hours.',
+      stack: ['React', 'Java', 'Spring Boot', 'Apache Kafka', 'SQL'],
+      confidential: true,
+    },
+    {
+      number: '02',
+      type: 'AI • NLP • PRODUCT',
+      title: 'Profsistant AI',
+      description:
+        'An AI-powered research assistant that combines Google Scholar discovery, Gemini-powered research analysis, reading management, research-gap generation, personalized planning, and interactive dashboards.',
+      stack: [
+        'Python',
+        'Gemini',
+        'LLMs',
+        'Streamlit',
+        'Google Scholar API',
+        'Plotly',
+      ],
+      link: 'https://github.com/Namslay26/ProfsistantAI',
+      linkText: 'View on GitHub',
+    },
+    {
+      number: '03',
+      type: 'COMPUTER VISION • CREATIVE TECH',
+      title: 'Gesture-Based Control',
+      description:
+        'A real-time computer vision system that recognizes hand gestures and translates them into controls for the mouse, keyboard, brightness, and audio — creating a touch-free human-computer interface.',
+      stack: ['Python', 'OpenCV', 'MediaPipe', 'NumPy'],
+      link: 'https://github.com/Namslay26/gesture-recognition-project',
+      linkText: 'View project',
+    },
+    {
+      number: '04',
+      type: 'PRODUCT • DESIGN • ENTREPRENEURSHIP',
+      title: 'The Michpelled Store',
+      description:
+        'An independent print-on-demand creative business where I handle product ideation, visual design, storefront operations, marketing, customer communication, and fulfillment end-to-end.',
+      stack: ['Product Design', 'Visual Design', 'E-commerce', 'Branding'],
+      link: 'https://www.instagram.com/themichpelledstore/',
+      linkText: 'Explore the brand',
+    },
+  ]
+
   return (
-    <main className=" bg-slate-50 text-slate-900 px-10 overflow-hidden">
-      <section id='SnehaMichelle'>
-      <nav>
-        <ul className=" p-4 py-4 flex justify-between space-x-2">
-          <li><a href="#SnehaMichelle">Sneha Michelle</a></li>
-          <li className='md:text-xs'><a href="#SnehaMichelle">Home</a> </li>
-          <li><a href="#services">Services</a> </li>
-          <li><a href="#skills">Skills</a> </li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <hr className=" fill-black"/>
+    <main className="min-h-screen overflow-hidden bg-[#f7f7f4] text-[#111111]">
+      {/* NAVIGATION */}
+      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-black/10 bg-[#f7f7f4]/90 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+          <a
+            href="#home"
+            className="text-sm font-semibold tracking-tight transition hover:opacity-60"
+          >
+            SNEHA MICHELLE
+          </a>
+
+          <div className="hidden items-center gap-8 text-sm md:flex">
+            <a href="#work" className="transition hover:opacity-50">
+              Work
+            </a>
+
+            <a href="#experience" className="transition hover:opacity-50">
+              Experience
+            </a>
+
+            <a href="#about" className="transition hover:opacity-50">
+              About
+            </a>
+
+            <a href="#contact" className="transition hover:opacity-50">
+              Contact
+            </a>
+          </div>
+
+          <a
+            href="https://github.com/Namslay26"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-sm font-medium"
+          >
+            GitHub
+            <BsArrowUpRight />
+          </a>
+        </div>
       </nav>
-      <div className=' py-20  sm:flex sm:justify-center'>
-        <div>
-        <div className='p-30 sm:p-40'>
-          <h1 className='text-center sm:text-left text-5xl'>I am <span className=" font-bold">Sneha Michelle</span></h1>
-          <h2 className='text-center sm:text-left mt-2 text-2xl'>Front-end developer, designer, and student.</h2>
-          </div>
-          <div className='m-5 sm:mt-0 flex justify-evenly'>
-            <a href="https://github.com/Namslay26"><BsGithub className=' text-3xl'/></a>
-            <a href="https://www.linkedin.com/in/sneha-michelle-vimal-1b73b0213/"><BsLinkedin className=' text-3xl'/></a>
-            <a href="vsnehamichelle@gmail.com"><BsMailbox className=' text-3xl'/></a>
-          </div>
-        </div>
-        <div className='p-30'>
-          <Image  className='md:shrink-0 w-400 h-400' src={me} alt="Sneha Michelle" width={400} height={400}/>
-        </div>
-      </div>
-      </section>
-      <section className='px-20' id='services'>
-        <h1 className=' text-center sm:text-left sm:py-10 sm:m-2 text-3xl font-bold'>What do I do?</h1>
-        <br />
-        <div className=' sm:flex sm:justify-between'>
-        <div className="shadow-lg  p-5 rounded-xl my-10">
-          <CgFigma className=' w-10 h-10  ' />
-          <h3 className=' text-lg font-medium pt-8 pb-2'>UI/UX Design</h3>
-          <p className=' py-2'>I can help you translate your ideas into presentable and intuitive designs.</p>
-        </div>
-        <div className="shadow-lg p-5 rounded-xl my-10">
-          <CiLaptop className=' w-10 h-10 ' />
-          <h3 className='text-lg font-medium pt-8 pb-2'>Front End Applications</h3>
-          <p className='py-2'> Im a skilled front-end developer with expertise in HTML, CSS, JavaScript, React, and Next.js, ready to bring your web projects to life. </p>
-        </div>
-        <div className="shadow-lg  p-5 rounded-xl my-10">
-          <BsRobot className=' w-10 h-10' />
-          <h3 className=' text-lg font-medium pt-8 pb-2'>Machine Learning and Data Science</h3>
-          <p className=' py-2'>Im a passionate machine learning enthusiast with a deep curiosity for the world of AI, eager to explore and innovate in the realm of machine learning. </p>
-        </div>
-        </div>
-      </section>
-      <br />
-      <section className='px-5 sm:px-20 mt-20' id='skills'>
-          <h1 className=' sm:text-left py-10 text-3xl font-bold'>Skills</h1>
-          <div className=' py-10  flex justify-between space-x-5  sm:space-x-3'>
-            <div className='flex space-x-2'>
-              <div><FaHtml5 className='text-3xl'/></div>
-              <div><p className='text-3xl  font-semibold'>HTML</p></div>
-            </div>
-            <div className='flex space-x-2'>
-              <div><FaCss3 className='text-3xl'/></div>
-              <div><p className='text-3xl font-semibold'>CSS</p></div>
-            </div>
-            <div className='flex space-x-2 '>
-              <div><FaJs className='text-3xl'/></div>
-              <div><p className='text-3xl font-semibold'>Javascript</p></div>
-            </div>
-            <div className='flex space-x-2'>
-              <div><FaPython className='text-3xl'/></div>
-              <div><p className='text-3xl  font-semibold'>Python</p></div>
-            </div>
-          </div>
-          <hr />
-          <div className='py-10 flex justify-evenly'>
-            <div className='flex space-x-1'>
-              <FaJava className='text-3xl'/><p className='text-3xl font-semibold'>Java</p>
-            </div>
-            <div className='flex space-x-1'>
-              <FaFigma className='text-3xl'/><p className='text-3xl  font-semibold'>Figma</p>
-            </div>
-          </div>
-      </section>
-      <section className='px-20 mt-20' id='projects'>
-      <h1 className='text-center sm:text-left py-10 text-3xl font-bold'>Projects</h1>
-      <div>
-        <h2 className='text-center sm:text-left py-5 text-2xl font-semibold'>Gesture Based Electronic Device Control - April 2023</h2>
-        <p className='text-center sm:text-left'>The gesture recognition control of electronic devices project aims to develop a system that allows users to interact with electronic devices using hand gestures. The project utilizes computer vision techniques, specifically hand tracking and gesture recognition algorithms, implemented with libraries such as OpenCV and MediaPipe. By tracking the position of the hand and analyzing hand gestures, the system can interpret user actions and perform corresponding actions, such as controlling the mouse, keyboard, screen brightness, or audio playback. The project modularizes different tasks, such as hand tracking, gesture recognition, and device control, to ensure efficient and accurate interaction between the user and the electronic devices.</p>
-        <h5 className='text-center sm:text-left py-3 font-medium'>Tech Stack Used:OpenCV, MediaPipe, Numpy, PyAutoGUI, Screen Brightness Control.</h5>
-        <h4 className='text-center sm:text-left py-4 font-mono'><a href="https://github.com/Namslay26/gesture-recognition-project">Link to the project</a></h4>
-      </div>
-      <hr />
-      <div>
-        <h2 className='text-center sm:text-left py-5 text-2xl font-semibold'>BookIO - November 2022</h2>
-        <p className='text-center sm:text-left'>Book.IO is an innovative online platform designed to streamline the process of finding and reviewing academic textbooks. It caters to teachers, professors, students, and academic enthusiasts, allowing them to save time by accessing reviews and recommendations from a diverse community. With a user-friendly interface, Book.IO aims to connect users with appropriate textbooks for their academic references, enhancing the learning experience.</p>
-        <h5 className='text-center sm:text-left py-3 font-medium'>Tech Stack Used:HTML5, CSS3, JavaScript, Bootstrap, Firebase.</h5>
-        <h4 className='text-center sm:text-left py-4 font-mono'><a href="https://github.com/Namslay26/BookIO">Link to the project</a></h4>
-      </div>
-      </section>
-      <section  className='  bg-slate-950  text-white px-20 mt-20 ' id='contact'>
-        <h1 className='py-10 text-3xl font-bold'>Contact me!</h1>
-        <div className='py-10 sm:flex justify-evenly'>
+
+      {/* HERO */}
+      <section
+        id="home"
+        className="mx-auto max-w-7xl px-6 pb-24 pt-36 lg:px-10 lg:pb-32 lg:pt-44"
+      >
+        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 xl:grid-cols-[1.1fr_0.9fr]">
+          {/* Hero Text */}
           <div>
-            <h2 className='py-5 text-2xl font-bold'>Just say hi!</h2>
-            <p className='py-4 text-lg font-medium'>I would love to collaborate and work on projects together !</p>
+            <p className="mb-7 text-xs font-semibold uppercase tracking-[0.25em] text-black/50">
+              Software Engineer • AI/ML • Creative Technology
+            </p>
+
+            <h1 className="max-w-5xl text-5xl font-medium leading-[0.95] tracking-[-0.055em] sm:text-7xl lg:text-[6.8rem]">
+              I build
+              <br />
+              <span className="font-semibold">intelligent systems</span>
+              <br />
+              &amp; thoughtful products.
+            </h1>
+
+            <p className="mt-10 max-w-2xl text-lg leading-8 text-black/60 lg:text-xl">
+              I&apos;m Sneha — a software engineer working across AI/ML,
+              distributed systems, data privacy, and creative technology. I
+              enjoy turning complex technical problems into useful, intuitive
+              experiences.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-3">
+              <a
+                href="#work"
+                className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5"
+              >
+                Explore my work
+              </a>
+
+              <a
+                href="mailto:vsnehamichelle@gmail.com"
+                className="rounded-full border border-black/20 px-6 py-3 text-sm font-medium transition hover:bg-black hover:text-white"
+              >
+                Get in touch
+              </a>
+            </div>
           </div>
-          <div>
-            <h2 className='py-5 text-2xl font-bold'>Social Media Links</h2>
-            <ul>
-              <li><a href="https://github.com/Namslay26">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/sneha-michelle-vimal-1b73b0213/">LinkedIn</a></li>
-              <li><a href="vsnehamichelle@gmail.com">Email</a></li>
-              <li><a href="https://www.behance.net/snehamvimal">Behance</a></li>
-            </ul>
+
+          {/* Identity Map + Photo */}
+          <div className="relative flex min-h-[360px] w-full items-center justify-center sm:min-h-[420px] lg:min-h-[500px]">
+            {/* Horizontal connection line */}
+            <div className="absolute left-1/2 top-1/2 h-px w-[70%] -translate-x-1/2 bg-black/10" />
+
+            {/* Vertical connection line */}
+            <div className="absolute left-1/2 top-1/2 h-[70%] w-px -translate-x-1/2 -translate-y-1/2 bg-black/10" />
+
+            {/* AI / ML */}
+            <div className="absolute left-1/2 top-2 -translate-x-1/2 text-center">
+              <div className="mx-auto mb-3 h-2 w-2 rounded-full bg-black" />
+
+              <p className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.2em] text-black/50">
+                AI / ML
+              </p>
+            </div>
+
+            {/* Privacy */}
+            <div className="absolute left-[4%] top-1/2 -translate-y-1/2 text-center">
+              <div className="mx-auto mb-3 h-2 w-2 rounded-full bg-black" />
+
+              <p className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.2em] text-black/50">
+                Privacy
+              </p>
+            </div>
+
+            {/* Systems */}
+            <div className="absolute right-[4%] top-1/2 -translate-y-1/2 text-center">
+              <div className="mx-auto mb-3 h-2 w-2 rounded-full bg-black" />
+
+              <p className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.2em] text-black/50">
+                Systems
+              </p>
+            </div>
+
+            {/* Creativity */}
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-center">
+              <div className="mx-auto mb-3 h-2 w-2 rounded-full bg-black" />
+
+              <p className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.2em] text-black/50">
+                Creativity
+              </p>
+            </div>
+
+            {/* Photo */}
+            <div className="relative z-10">
+              <div className="absolute -inset-3 rounded-[2rem] border border-black/10" />
+
+              <div className="relative h-60 w-48 overflow-hidden rounded-[1.5rem] bg-black shadow-xl transition-transform duration-500 hover:-translate-y-1 lg:h-72 lg:w-56">
+                <Image
+                  src={image}
+                  alt="Sneha Michelle"
+                  fill
+                  className="object-cover grayscale transition duration-700 hover:grayscale-0"
+                  priority
+                />
+              </div>
+
+              {/* Name */}
+              <div className="absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-black/40">
+                  Sneha Michelle
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </section >
+
+        {/* Current role */}
+        <div className="mt-20 flex items-center gap-6 border-t border-black/10 pt-6">
+          <span className="text-xs uppercase tracking-[0.2em] text-black/40">
+            Currently
+          </span>
+
+          <span className="text-sm">
+            Building privacy-focused distributed systems at Bank of America
+          </span>
+        </div>
+      </section>
+
+      {/* FEATURED WORK */}
+      <section
+        id="work"
+        className="bg-[#111111] px-6 py-24 text-white lg:px-10 lg:py-32"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-white/40">
+                Selected work
+              </p>
+
+              <h2 className="text-4xl font-medium tracking-tight sm:text-6xl">
+                Things I&apos;ve built.
+              </h2>
+            </div>
+
+            <p className="max-w-sm text-sm leading-6 text-white/50">
+              A mix of professional engineering, AI experimentation, computer
+              vision, and creative projects.
+            </p>
+          </div>
+
+          <div className="divide-y divide-white/10 border-y border-white/10">
+            {projects.map((project) => (
+              <article
+                key={project.number}
+                className="group grid gap-8 py-10 transition md:grid-cols-[80px_1fr_2fr] md:items-start lg:py-14"
+              >
+                <span className="font-mono text-sm text-white/30">
+                  {project.number}
+                </span>
+
+                <div>
+                  <p className="text-[10px] font-semibold tracking-[0.18em] text-white/40">
+                    {project.type}
+                  </p>
+
+                  <h3 className="mt-3 text-2xl font-medium tracking-tight transition group-hover:text-white/70 lg:text-3xl">
+                    {project.title}
+                  </h3>
+                </div>
+
+                <div>
+                  <p className="max-w-2xl text-sm leading-7 text-white/60 lg:text-base">
+                    {project.description}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-white/15 px-3 py-1 text-[11px] text-white/50"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {project.confidential ? (
+                    <span className="mt-6 inline-block text-xs text-white/30">
+                      Professional project • Details intentionally limited
+                    </span>
+                  ) : (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-6 inline-flex items-center gap-2 text-sm font-medium transition hover:text-white/60"
+                    >
+                      {project.linkText}
+                      <BsArrowUpRight />
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CAPABILITIES */}
+      <section id="skills" className="px-6 py-24 lg:px-10 lg:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-black/40">
+              What I work with
+            </p>
+
+            <h2 className="max-w-3xl text-4xl font-medium tracking-tight sm:text-6xl">
+              Engineering with a little bit of everything.
+            </h2>
+          </div>
+
+          <div className="grid border-l border-t border-black/10 sm:grid-cols-2">
+            {skills.map((skill, index) => (
+              <div
+                key={skill.title}
+                className={`border-b border-r border-black/10 p-8 lg:p-10 ${
+                  index === 0 ? 'bg-white' : ''
+                }`}
+              >
+                <div className="mb-8 flex items-center justify-between">
+                  <span className="font-mono text-xs text-black/30">
+                    0{index + 1}
+                  </span>
+
+                  {index === 0 && <BsCodeSlash className="text-xl" />}
+                  {index === 1 && <BsRobot className="text-xl" />}
+                  {index === 2 && <BsLightningCharge className="text-xl" />}
+                  {index === 3 && <SiFigma className="text-xl" />}
+                </div>
+
+                <h3 className="text-xl font-semibold">{skill.title}</h3>
+
+                <p className="mt-3 max-w-md text-sm leading-6 text-black/50">
+                  {skill.description}
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-2">
+                  {skill.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full bg-black/5 px-3 py-1.5 text-xs"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* EXPERIENCE */}
+      <section
+        id="experience"
+        className="border-y border-black/10 bg-white px-6 py-24 lg:px-10 lg:py-32"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-16 lg:grid-cols-[1fr_2fr] lg:gap-24">
+            <div>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-black/40">
+                Experience
+              </p>
+
+              <h2 className="text-4xl font-medium tracking-tight sm:text-5xl">
+                Where I&apos;ve been building.
+              </h2>
+            </div>
+
+            <div className="divide-y divide-black/10 border-y border-black/10">
+              <div className="grid gap-3 py-8 sm:grid-cols-[1fr_auto]">
+                <div>
+                  <h3 className="text-lg font-semibold">Bank of America</h3>
+
+                  <p className="mt-1 text-sm text-black/50">
+                    Officer, Software Engineer 1B
+                  </p>
+                </div>
+
+                <span className="text-sm text-black/40">
+                  2026 — Present
+                </span>
+              </div>
+
+              <div className="grid gap-3 py-8 sm:grid-cols-[1fr_auto]">
+                <div>
+                  <h3 className="text-lg font-semibold">Bank of America</h3>
+
+                  <p className="mt-1 text-sm text-black/50">
+                    Software Engineer
+                  </p>
+                </div>
+
+                <span className="text-sm text-black/40">2024 — 2026</span>
+              </div>
+
+              <div className="grid gap-3 py-8 sm:grid-cols-[1fr_auto]">
+                <div>
+                  <h3 className="text-lg font-semibold">Capgemini</h3>
+
+                  <p className="mt-1 text-sm text-black/50">
+                    Software Engineer Intern
+                  </p>
+                </div>
+
+                <span className="text-sm text-black/40">2024</span>
+              </div>
+
+              <div className="grid gap-3 py-8 sm:grid-cols-[1fr_auto]">
+                <div>
+                  <h3 className="text-lg font-semibold">PlastiSkul</h3>
+
+                  <p className="mt-1 text-sm text-black/50">
+                    PSK Meta Network Intern
+                  </p>
+                </div>
+
+                <span className="text-sm text-black/40">2023</span>
+              </div>
+
+              <div className="grid gap-3 py-8 sm:grid-cols-[1fr_auto]">
+                <div>
+                  <h3 className="text-lg font-semibold">Facilio</h3>
+
+                  <p className="mt-1 text-sm text-black/50">
+                    Frontend Developer Intern
+                  </p>
+                </div>
+
+                <span className="text-sm text-black/40">2022</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+<section id="about" className="px-6 py-24 lg:px-10 lg:py-32">
+  <div className="mx-auto max-w-7xl">
+    <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+      
+      {/* Heading */}
+      <div>
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-black/40">
+          A little about me
+        </p>
+
+        <h2 className="text-4xl font-medium leading-tight tracking-tight sm:text-6xl">
+          I like building things.
+          <br />
+          <span className="text-black/40">
+            And bringing people together.
+          </span>
+        </h2>
+      </div>
+
+      {/* Content */}
+      <div className="space-y-7 text-lg leading-8 text-black/60">
+        <p>
+          I&apos;m a software engineer who enjoys working at the intersection
+          of <span className="text-black">engineering, AI, privacy, and design</span>.
+          I like taking complicated problems, understanding what is really
+          happening underneath them, and turning them into things that feel
+          simple and intuitive.
+        </p>
+
+        <p>
+          But some of the things I enjoy most have very little to do with
+          writing code. I&apos;ve hosted multiple enterprise-level events,
+          facilitated smaller team and community events, and genuinely enjoy
+          being the person who gets people in a room excited about an idea.
+        </p>
+
+        <p>
+          For the past two years, I&apos;ve also been a Sunday school teacher,
+          teaching around 20 children each year. It has taught me a surprising
+          amount about communication — especially how to take something
+          complicated, understand your audience, and explain it in a way that
+          actually sticks.
+        </p>
+
+        <p>
+          I&apos;m naturally curious and tend to have several things going on
+          at once. One day I might be exploring an LLM or experimenting with
+          an AI product; another day I&apos;m designing something in Figma,
+          working on a side project, preparing a presentation, or figuring
+          out how to make a team experience a little better.
+        </p>
+
+        <p>
+          I care a lot about <span className="text-black">how things are built</span>
+          — clean engineering practices, good documentation, thoughtful
+          interfaces, and making knowledge easier to share. I&apos;m happiest
+          when I can build something useful and then help someone else
+          understand it.
+        </p>
+
+        <p className="text-black">
+          At the core, I&apos;m a builder, a communicator, and a perpetual
+          learner — with a slightly unhealthy number of ideas I want to try.
+        </p>
+      </div>
+    </div>
+
+    {/* Personal qualities */}
+    <div className="mt-20 grid border-l border-t border-black/10 sm:grid-cols-2 lg:grid-cols-4">
+      {[
+        {
+          number: '01',
+          title: 'Curious',
+          text: 'Always learning, experimenting, and asking how things could work better.',
+        },
+        {
+          number: '02',
+          title: 'Communicator',
+          text: 'I enjoy turning complex ideas into stories, presentations, and conversations people understand.',
+        },
+        {
+          number: '03',
+          title: 'Builder',
+          text: 'I like taking ideas from “what if?” to something people can actually use.',
+        },
+        {
+          number: '04',
+          title: 'Community-minded',
+          text: 'Whether it is a team, classroom, or event, I enjoy creating spaces where people feel involved.',
+        },
+      ].map((item) => (
+        <div
+          key={item.number}
+          className="border-b border-r border-black/10 p-7 lg:p-8"
+        >
+          <span className="font-mono text-xs text-black/30">
+            {item.number}
+          </span>
+
+          <h3 className="mt-8 text-lg font-semibold">
+            {item.title}
+          </h3>
+
+          <p className="mt-3 text-sm leading-6 text-black/50">
+            {item.text}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+{/* LEADERSHIP & COMMUNITY */}
+<div className="mt-20">
+  <div className="relative overflow-hidden rounded-[2rem] bg-black">
+    <div className="relative aspect-[16/8] w-full">
+      <Image
+        src={eventPhoto}
+        alt="Sneha Michelle hosting an enterprise event"
+        fill
+        className="object-cover object-center transition duration-700 hover:scale-[1.02]"
+      />
+
+      {/* Subtle overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+      {/* Caption */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/50">
+          Beyond engineering
+        </p>
+
+        <div className="mt-2 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+          <h3 className="max-w-xl text-2xl font-medium tracking-tight text-white sm:text-3xl">
+            Sometimes the most interesting part of building something is
+            bringing people along with you.
+          </h3>
+
+          <span className="whitespace-nowrap text-xs text-white/50">
+            600+ people • Event hosting
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      {/* CREATIVE STRIP */}
+      <section className="bg-[#e8e4dc] px-6 py-20 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 md:grid-cols-3 md:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-black/40">
+                Beyond code
+              </p>
+            </div>
+
+            <div className="md:col-span-2">
+              <p className="text-2xl leading-relaxed tracking-tight sm:text-3xl lg:text-4xl">
+                Design. Product thinking. Visual storytelling. Building things
+                just because I want to see if I can.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section
+        id="contact"
+        className="bg-[#111111] px-6 py-24 text-white lg:px-10 lg:py-32"
+      >
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-white/40">
+            Let&apos;s connect
+          </p>
+
+          <h2 className="max-w-4xl text-5xl font-medium leading-tight tracking-[-0.04em] sm:text-7xl">
+            Have an interesting problem?
+            <br />
+            <span className="text-white/40">Let&apos;s talk.</span>
+          </h2>
+
+          <div className="mt-12 flex flex-wrap gap-3">
+            <a
+              href="mailto:vsnehamichelle@gmail.com"
+              className="flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:-translate-y-0.5"
+            >
+              <BsEnvelope />
+              Email me
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/sneha-michelle-v-1b73b0213/"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 rounded-full border border-white/20 px-6 py-3 text-sm font-medium transition hover:bg-white hover:text-black"
+            >
+              <BsLinkedin />
+              LinkedIn
+            </a>
+
+            <a
+              href="https://github.com/Namslay26"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 rounded-full border border-white/20 px-6 py-3 text-sm font-medium transition hover:bg-white hover:text-black"
+            >
+              <BsGithub />
+              GitHub
+            </a>
+          </div>
+
+          <div className="mt-24 flex flex-col justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/30 sm:flex-row">
+            <span>© {new Date().getFullYear()} Sneha Michelle</span>
+
+            <span>Built with Next.js + Tailwind</span>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
